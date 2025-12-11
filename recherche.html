@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats - LandRide</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/landfall_logo.webp">
+</head>
+<body>
+    <header>
+        <div class="left"><img src="img/landfall_logo.webp" class="logo"></div>
+        <div class="actions"><a href="index.html" class="btn small">Accueil</a></div>
+    </header>
+
+    <main>
+        <form action="recherche.html" class="search-recap">
+            <input type="text" value="Lille">
+            <input type="text" value="Paris">
+            <input type="date" value="2025-11-30">
+            <button type="submit" class="btn small">Modifier</button>
+        </form>
+
+        <h2>3 Trajets trouvés</h2>
+
+        <div class="result-card">
+            <div class="trip-info">
+                <div class="result-time">07:00 ➔ 08:30</div>
+                <div class="result-route">Jean (4.8/5) • Électrique</div>
+            </div>
+            <div class="trip-actions">
+                <span class="result-price">12 €</span>
+                <a href="detail_trajet.html" class="btn primary">Détails</a>
+            </div>
+        </div>
+
+        <div class="result-card">
+            <div class="trip-info">
+                <div class="result-time">09:15 ➔ 10:55</div>
+                <div class="result-route">Marie (4.2/5)</div>
+            </div>
+            <div class="trip-actions">
+                <span class="result-price">10 €</span>
+                <a href="detail_trajet.html" class="btn primary">Détails</a>
+            </div>
+        </div>
+        
+        <div class="no-result" style="margin-top:40px; text-align:center; border:1px dashed #e74c3c; padding:20px; border-radius:8px;">
+            <p>Pas le bon horaire ?</p>
+            <a href="compte/publier.html" style="color:#e74c3c; font-weight:bold;">Créer une alerte</a>
+        </div>
+    </main>
+    <footer>
+        <ul class="footer-list">
+            <li>Romain Lefebvre</li> <li><a href="legal/contact.html">Contact Admin</a></li>
+            <li><a href="legal/cgu.html">CGU</a></li>
+            <li><a href="legal/mentions.html">Mentions Légales</a></li>
+            <li><a href="legal/rgpd.html">Confidentialité (RGPD)</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Publier - LandRide</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/landfall_logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="brand"><img src="../img/landfall_logo.webp" alt="Logo LandRide" class="logo"></div>
+            <nav class="nav-stack"><li><a href="../index.html">Accueil</a></li></nav>
+        </div>
+        <div class="actions">
+            <a href="tableau_de_bord.html" class="btn small">Mon Compte</a>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="text-align: center; margin-bottom: 40px; color: #a9d6ff;">Économisez en respectant la planète</h1>
+
+        <form action="tableau_de_bord.html" class="publish-form-container">
+            <table class="publish-table-original">
+                <thead>
+                    <tr>
+                        <th>Information</th>
+                        <th>Réponse</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heure de Départ</td>
+                        <td><input type="datetime-local" name="heure_depart" required></td>
+                    </tr>
+                    <tr>
+                        <td>Lieu de départ</td>
+                        <td colspan="2"><input type="text" name="depart" placeholder="Adresse de départ" required></td>
+                    </tr>
+                    <tr>
+                        <td>Lieu d'arrivée</td>
+                        <td colspan="2"><input type="text" name="arrivee" placeholder="Adresse d'arrivée" required></td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de passagers</td>
+                        <td colspan="2"><input type="number" name="places" min="1" max="8" placeholder="Ex: 3" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="padding: 20px 0;">
+                            <div class="frequency-buttons-original">
+                                <label>
+                                    <input type="radio" name="frequence" value="une_fois" checked>
+                                    <span>Une seule fois</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="frequence" value="quotidien">
+                                    <span>Tous les jours</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="frequence" value="hebdo">
+                                    <span>Tous les 7 jours</span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="submit-area">
+                <button type="submit" class="btn-publish-large">Partager mon trajet</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <ul class="footer-list">
+            <li>Romain Lefebvre</li>
+            <li><a href="../legal/contact.html">Contact Admin</a></li>
+            <li><a href="../legal/cgu.html">CGU</a></li>
+            <li><a href="../legal/mentions.html">Mentions Légales</a></li>
+            <li><a href="../legal/rgpd.html">Confidentialité (RGPD)</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
