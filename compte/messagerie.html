@@ -1,79 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>LandRide - Messagerie</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/base.css">
-        <link rel="stylesheet" href="../css/messagerie.css">
-        <link rel="icon" href="img/landfall_logo.webp" type="image/webp">
-    </head>
-    <body>
-        <header>
-            <div class="left">
-                <div class="brand">
-                    <img src="../img/landfall_logo.webp" alt="Logo du site" class="logo">
+<head>
+    <meta charset="UTF-8">
+    <title>LandRide - Messagerie</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/landfall_logo.webp">
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="brand"><img src="../img/landfall_logo.webp" alt="Logo" class="logo"></div>
+            <nav class="nav-stack"><li><a href="../index.html">Accueil</a></li></nav>
+        </div>
+        <div class="actions">
+            <a href="tableau_de_bord.html" class="btn small">Mon Compte</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Mes conversations</h1>
+        
+        <!-- Système de messagerie sans JS -->
+        <div class="messaging-layout">
+            <!-- Les inputs qui contrôlent l'affichage -->
+            <input type="radio" name="contact" id="contact1" checked>
+            <input type="radio" name="contact" id="contact2">
+            <input type="radio" name="contact" id="contact3">
+
+            <!-- Colonne de gauche : Liste des contacts -->
+            <div class="contacts-list">
+                <label for="contact1" class="contact-label">
+                    <strong>Romain Neuille</strong>
+                    <small>Salut, pour le trajet de demain...</small>
+                </label>
+                <label for="contact2" class="contact-label">
+                    <strong>Luca Goat</strong>
+                    <small>J'arrive dans 5 minutes !</small>
+                </label>
+                <label for="contact3" class="contact-label">
+                    <strong>Support LandRide</strong>
+                    <small>Votre location est confirmée.</small>
+                </label>
+            </div>
+
+            <!-- Colonne de droite : Conversations -->
+            <div class="messages-display">
+                <!-- Conversation 1 -->
+                <div id="conv1" class="conversation">
+                    <div class="message received">Salut, pour le trajet de demain, c'est toujours bon 8h ?</div>
+                    <div class="message sent">Oui pas de souci ! Je t'attends devant le batiment B.</div>
+                    <div class="message received">Super merci !</div>
                 </div>
 
-                <nav>
-                    <ul class="nav-stack">
-                        <li><a href="../index.html">LandRide</a></li>
-                        <li><a href="https://landfall.se/">Landfall</a></li>
-                    </ul>
-                </nav>
+                <!-- Conversation 2 -->
+                <div id="conv2" class="conversation">
+                    <div class="message received">J'arrive dans 5 minutes !</div>
+                    <div class="message sent">Ok, prends ton temps.</div>
+                </div>
+
+                <!-- Conversation 3 -->
+                <div id="conv3" class="conversation">
+                    <div class="message received">Bonjour, votre location de trottinette a bien été validée.</div>
+                </div>
             </div>
+        </div>
+    </main>
 
-            <div class="actions">
-                <a href="login.html" class="btn small">Connexion / Inscription</a>
-                <a href="publier.html" class="btn primary">Publier un trajet</a>
-            </div>
-        </header>
-
-        <main class="messaging-container">
-            <div class="messaging-layout">
-                
-                <aside class="contacts-panel">
-                    <h2 class="panel-title">Vos contacts</h2>
-                    <div class="contact-item">
-                        <span class="contact-name">Romain Neuille</span>
-                        <div class="contact-label">Romain2DeKDA@noob.fr </div>
-                        <div class="contact-label clickable">Appuyez ici pour envoyez un message à Romain sur la messagerie Landride.</div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-name">Baptiste BeauGosse</span>
-                        <div class="contact-label">BaptisteIRON4@noob.fr </div>
-                        <div class="contact-label clickable">Appuyez ici pour envoyez un message à Baptiste sur la messagerie Landride.</div>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-name">Luca Goat</span>
-                        <div class="contact-label">Lucalebgdu59@noob.fr </div>
-                        <div class="contact-label clickable">Appuyez ici pour envoyez un message à Luca sur la messagerie Landride.</div>
-                    </div>
-                </aside>
-
-                
-                <section class="messages-panel">
-                    <div class="user-info">
-                        <p>Connecté en tant que :</p>
-                        <p class="username">Paul le noob</p>
-                    </div>
-
-                    <div class="messages-content">
-                        <div class="messages-box">
-                            <p class="messages-placeholder">Cliquez sur un de vos contact pour voir les messages de la personne sélectionnée</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <footer>
+    <footer>
         <ul class="footer-list">
             <li>Romain Lefebvre</li>
             <li><a href="../legal/contact.html">Contact Admin</a></li>
             <li><a href="../legal/cgu.html">CGU</a></li>
             <li><a href="../legal/mentions.html">Mentions Légales</a></li>
-            <li><a href="../legal/rgpd.html">Confidentialité (RGPD)</a></li>
+            <li><a href="../legal/rgpd.html">RGPD</a></li>
         </ul>
     </footer>
-    </body>
+</body>
 </html>

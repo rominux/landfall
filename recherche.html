@@ -9,8 +9,13 @@
 </head>
 <body>
     <header>
-        <div class="left"><img src="img/landfall_logo.webp" class="logo"></div>
-        <div class="actions"><a href="index.html" class="btn small">Accueil</a></div>
+        <div class="left">
+            <div class="brand"><img src="img/landfall_logo.webp" alt="Logo" class="logo"></div>
+            <nav class="nav-stack"><li><a href="index.html">Accueil</a></li></nav>
+        </div>
+        <div class="actions">
+            <a href="compte/connexion.html" class="btn small">Connexion</a>
+        </div>
     </header>
 
     <main>
@@ -34,28 +39,22 @@
             </div>
         </div>
 
-        <div class="result-card">
-            <div class="trip-info">
-                <div class="result-time">09:15 ➔ 10:55</div>
-                <div class="result-route">Marie (4.2/5)</div>
-            </div>
-            <div class="trip-actions">
-                <span class="result-price">10 €</span>
-                <a href="compte/detail_trajet.html" class="btn primary">Détails</a>
-            </div>
-        </div>
-        
+        <!-- Autres résultats... -->
+
         <div class="no-result" style="margin-top:40px; text-align:center; border:1px dashed #e74c3c; padding:20px; border-radius:8px;">
+            <!-- TEXTE MODIFIÉ ICI -->
             <p>Pas le bon horaire ?</p>
-            <a href="compte/publier.html" style="color:#e74c3c; font-weight:bold;">Créer une alerte</a>
+            <a href="compte/publier.html" style="color:#e74c3c; font-weight:bold;">Créez votre propre trajet</a>
         </div>
     </main>
+
     <footer>
         <ul class="footer-list">
-            <li>Romain Lefebvre</li> <li><a href="legal/contact.html">Contact Admin</a></li>
+            <li>Romain Lefebvre</li>
+            <li><a href="legal/contact.html">Contact Admin</a></li>
             <li><a href="legal/cgu.html">CGU</a></li>
             <li><a href="legal/mentions.html">Mentions Légales</a></li>
-            <li><a href="legal/rgpd.html">Confidentialité (RGPD)</a></li>
+            <li><a href="legal/rgpd.html">RGPD</a></li>
         </ul>
     </footer>
 </body>

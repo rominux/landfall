@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Mon Compte - LandRide</title>
+    <meta charset="utf-8">
+    <title>Tableau de bord - LandRide</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="img/landfall_logo.webp">
+    <link rel="icon" href="../img/landfall_logo.webp">
 </head>
 <body>
     <header>
         <div class="left">
-            <img src="../img/landfall_logo.webp" class="logo">
+            <div class="brand"><img src="../img/landfall_logo.webp" alt="Logo" class="logo"></div>
             <nav class="nav-stack"><li><a href="../index.html">Accueil</a></li></nav>
         </div>
         <div class="actions">
             <a href="../index.html" class="btn small" style="background:#e74c3c;">Déconnexion</a>
-            <a href="publier.html" class="btn primary">Publier un trajet</a>
         </div>
     </header>
 
     <main>
-        <h1>Bienvenue, PierreLeRapide</h1>
-        
-        <div style="display:flex; gap:20px; margin-bottom:30px;">
-            <a href="messagerie.html" class="btn secondary">📩 Messagerie (2)</a>
-            <a href="location.html" class="btn secondary">🚲 Louer un véhicule</a>
+        <div class="dashboard-hero">
+            <h1>Bonjour, Romain !</h1>
+            <p>Bienvenue sur votre espace personnel LandRide.</p>
         </div>
 
-        <h3>Mes Informations</h3>
-        <table>
-            <tr><td>Nom</td><td>Jacq</td></tr>
-            <tr><td>Prénom</td><td>Pierre</td></tr>
-            <tr><td>Email</td><td>pierre@landfall.se</td></tr>
-        </table>
+        <div class="dashboard-grid">
+            <a href="publier.html" class="dashboard-card">
+                <span>🚗</span>
+                <h3>Publier un trajet</h3>
+            </a>
+            
+            <a href="messagerie.html" class="dashboard-card">
+                <span>💬</span>
+                <h3>Messagerie</h3>
+            </a>
 
-        <h3>Mes Réservations (Passager)</h3>
-        <table>
-            <thead><tr><th>Trajet</th><th>Date</th><th>Conducteur</th></tr></thead>
-            <tbody>
-                <tr><td>Lille - Paris</td><td>24/11 07:20</td><td>Luc M.</td></tr>
-            </tbody>
-        </table>
+            <!-- LIEN CORRIGÉ ICI -->
+            <a href="../location.html" class="dashboard-card">
+                <span>🚲</span>
+                <h3>Louer un véhicule</h3>
+            </a>
+
+            <a href="../index.html" class="dashboard-card">
+                <span>🏠</span>
+                <h3>Retour au site</h3>
+            </a>
+        </div>
     </main>
 
     <footer>
@@ -49,7 +54,7 @@
             <li><a href="../legal/contact.html">Contact Admin</a></li>
             <li><a href="../legal/cgu.html">CGU</a></li>
             <li><a href="../legal/mentions.html">Mentions Légales</a></li>
-            <li><a href="../legal/rgpd.html">Confidentialité (RGPD)</a></li>
+            <li><a href="../legal/rgpd.html">RGPD</a></li>
         </ul>
     </footer>
 </body>

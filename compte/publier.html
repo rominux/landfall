@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Publier - LandRide</title>
+    <title>Publier un trajet - LandRide</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/landfall_logo.webp">
@@ -20,20 +20,23 @@
     </header>
 
     <main>
-        <h1 style="text-align: center; margin-bottom: 40px; color: #a9d6ff;">Économisez en respectant la planète</h1>
+        <h1 class="publish-title">Économisez en respectant la planète</h1>
 
-        <form action="tableau_de_bord.html" class="publish-form-container">
-            <table class="publish-table-original">
+        <!-- MODIFICATION ICI : Action vers la page de confirmation -->
+        <form action="confirmation_trajet.html" class="publish-form">
+            <table class="publish-table-complex">
                 <thead>
                     <tr>
                         <th>Information</th>
                         <th>Réponse</th>
+                        <th>Modification possible</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Heure de Départ</td>
-                        <td><input type="datetime-local" name="heure_depart" required></td>
+                        <td><input type="time" name="heure" required></td>
+                        <td><input type="time" disabled></td>
                     </tr>
                     <tr>
                         <td>Lieu de départ</td>
@@ -48,20 +51,11 @@
                         <td colspan="2"><input type="number" name="places" min="1" max="8" placeholder="Ex: 3" required></td>
                     </tr>
                     <tr>
-                        <td colspan="3" style="padding: 20px 0;">
-                            <div class="frequency-buttons-original">
-                                <label>
-                                    <input type="radio" name="frequence" value="une_fois" checked>
-                                    <span>Une seule fois</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="frequence" value="quotidien">
-                                    <span>Tous les jours</span>
-                                </label>
-                                <label>
-                                    <input type="radio" name="frequence" value="hebdo">
-                                    <span>Tous les 7 jours</span>
-                                </label>
+                        <td colspan="3" class="freq-cell">
+                            <div class="frequency-buttons">
+                                <label><input type="radio" name="freq" value="une_fois" checked><span>Une seule fois</span></label>
+                                <label><input type="radio" name="freq" value="quotidien"><span>Tous les jours</span></label>
+                                <label><input type="radio" name="freq" value="hebdo"><span>Tous les 7 jours</span></label>
                             </div>
                         </td>
                     </tr>
@@ -69,7 +63,7 @@
             </table>
 
             <div class="submit-area">
-                <button type="submit" class="btn-publish-large">Partager mon trajet</button>
+                <button type="submit" class="btn-publish-big">Partager mon trajet</button>
             </div>
         </form>
     </main>
@@ -80,7 +74,7 @@
             <li><a href="../legal/contact.html">Contact Admin</a></li>
             <li><a href="../legal/cgu.html">CGU</a></li>
             <li><a href="../legal/mentions.html">Mentions Légales</a></li>
-            <li><a href="../legal/rgpd.html">Confidentialité (RGPD)</a></li>
+            <li><a href="../legal/rgpd.html">RGPD</a></li>
         </ul>
     </footer>
 </body>
