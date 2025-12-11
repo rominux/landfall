@@ -1,7 +1,6 @@
 /* =========================================
    1. PAGE D'ACCUEIL (Home)
    ========================================= */
-/* Conteneur pleine largeur pour Home uniquement */
 .container-home {
     display: flex;
     flex-direction: column;
@@ -9,7 +8,6 @@
     padding-top: var(--header-height);
 }
 
-/* Hero Section avec barre de recherche */
 .hero-section {
     text-align: center;
     padding: 40px 20px;
@@ -61,7 +59,8 @@
 .content-box.electric-car img { width: 100%; height: 220px; object-fit: cover; border-radius: 8px; }
 .content-box.large-image {
     grid-column: 3; grid-row: 1 / span 2;
-    background-image: url('../img/home.jpg'); /* Placeholder */
+    background-color: #111f30; /* Fallback couleur */
+    background-image: url('../img/covoiturage-illustration.jpg');
     background-size: cover; border-radius: 8px; min-height: 300px;
 }
 
@@ -82,7 +81,7 @@
 
 
 /* =========================================
-   2. AUTHENTIFICATION (Connexion, Inscription, MDP)
+   2. AUTHENTIFICATION
    ========================================= */
 .auth-main {
     display: flex; align-items: center; justify-content: center;
@@ -101,7 +100,7 @@
 
 .form-stacked { display: flex; flex-direction: column; gap: 15px; text-align: left; }
 .form-stacked label { color: var(--muted); font-size: 0.9rem; margin-bottom: 5px; display: block; }
-.form-stacked input {
+.form-stacked input, .form-stacked select, .form-stacked textarea {
     width: 100%; padding: 10px;
     background: #04202a; border: 1px solid #264756;
     color: #fff; border-radius: 6px;
@@ -115,229 +114,86 @@
 
 
 /* =========================================
-   3. MESSAGERIE
+   3. MESSAGERIE & TABLEAU DE BORD
    ========================================= */
+.dashboard-hero {
+    background: #111f30; padding: 30px; border-radius: 12px; border: 1px solid #16324a;
+    text-align: center; margin-bottom: 30px;
+}
+.dashboard-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+}
+.dashboard-card {
+    background: #0b1620; padding: 25px; border-radius: 8px; border: 1px solid #16324a;
+    text-align: center; transition: transform 0.2s; display: block;
+}
+.dashboard-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.dashboard-card span { font-size: 2rem; display: block; margin-bottom: 10px; }
+.dashboard-card h3 { color: #fff; font-size: 1.1rem; margin: 0; }
+
+/* Messagerie Layout */
 .messaging-layout {
-    display: flex;
-    height: 600px;
-    border: 1px solid #16324a;
-    border-radius: 8px;
-    background: #0b1620;
-    overflow: hidden;
+    display: flex; height: 600px; border: 1px solid #16324a; border-radius: 8px; background: #0b1620; overflow: hidden;
 }
-
-/* On cache les boutons radio */
-.messaging-layout input[type="radio"] {
-    display: none;
-}
-
-/* Liste des contacts (Labels) */
-.contacts-list {
-    width: 300px;
-    background: #111f30;
-    border-right: 1px solid #16324a;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-label {
-    padding: 20px;
-    border-bottom: 1px solid #16324a;
-    cursor: pointer;
-    transition: background 0.2s;
-    color: #a9bfcf;
-    display: block;
-}
-
-.contact-label:hover {
-    background: #16324a;
-    color: #fff;
-}
-
-.contact-label strong {
-    display: block;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-/* Zones de messages */
-.messages-display {
-    flex: 1;
-    position: relative;
-    background: #0b1620;
-}
-
+.messaging-layout input[type="radio"] { display: none; }
+.contacts-list { width: 280px; background: #111f30; border-right: 1px solid #16324a; overflow-y: auto; }
+.contact-label { padding: 15px; border-bottom: 1px solid #16324a; cursor: pointer; display: block; color: #a9bfcf; }
+.contact-label:hover { background: #16324a; color: #fff; }
+.contact-label strong { display: block; color: #fff; margin-bottom: 4px; }
+.messages-display { flex: 1; position: relative; background: #0b1620; }
 .conversation {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    padding: 20px;
-    overflow-y: auto;
-    display: none; /* Caché par défaut */
-    flex-direction: column;
-    gap: 15px;
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0; padding: 20px;
+    overflow-y: auto; display: none; flex-direction: column; gap: 15px;
 }
+.message { padding: 10px 15px; border-radius: 8px; max-width: 70%; line-height: 1.4; }
+.message.received { background: #16324a; align-self: flex-start; color: #ddd; }
+.message.sent { background: #2a8cff; align-self: flex-end; color: #fff; }
 
-.message {
-    padding: 10px 15px;
-    border-radius: 8px;
-    max-width: 70%;
-    line-height: 1.4;
-}
-
-.message.received {
-    background: #16324a;
-    align-self: flex-start;
-    color: #ddd;
-}
-
-.message.sent {
-    background: #2a8cff;
-    align-self: flex-end;
-    color: #fff;
-}
-
-/* Mécanique d'affichage : Si radio X est checké, on affiche la conversation X */
+/* Logique d'affichage messagerie */
 #contact1:checked ~ .messages-display #conv1,
 #contact2:checked ~ .messages-display #conv2,
-#contact3:checked ~ .messages-display #conv3 {
-    display: flex;
-}
-
-/* Surbrillance du contact actif */
+#contact3:checked ~ .messages-display #conv3 { display: flex; }
 #contact1:checked ~ .contacts-list label[for="contact1"],
 #contact2:checked ~ .contacts-list label[for="contact2"],
-#contact3:checked ~ .contacts-list label[for="contact3"] {
-    background: #2a8cff;
-    color: white;
-}
+#contact3:checked ~ .contacts-list label[for="contact3"] { background: #2a8cff; color: white; }
 
 
 /* =========================================
-   4. PUBLIER UN TRAJET
+   4. PUBLIER (Style Tableau)
    ========================================= */
-.publish-form-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+.publish-title {
+    text-align: center; border: 2px solid #16324a; border-radius: 8px; padding: 20px;
+    margin: 0 auto 40px auto; max-width: 600px; background: #111f30; font-size: 1.8rem; color: #a9d6ff;
 }
+.publish-form { width: 100%; max-width: 800px; margin: 0 auto; }
+.publish-table-complex {
+    width: 100%; border-collapse: collapse; background: #111f30; border: 1px solid #16324a;
+    border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+}
+.publish-table-complex th {
+    background: #16324a; color: #a9d6ff; padding: 15px; text-align: left; font-weight: bold;
+}
+.publish-table-complex td { padding: 15px; border-bottom: 1px solid #16324a; color: #f0f0f0; vertical-align: middle; }
+.publish-table-complex input {
+    width: 100%; padding: 10px; background: #050d17; border: 1px solid #16324a; color: white; border-radius: 4px;
+}
+.publish-table-complex input:disabled { background: #0b1620; color: #555; border-color: #111; cursor: not-allowed; }
 
-.publish-table-original {
-    width: 100%;
-    border-collapse: collapse;
-    background: #111f30;
-    border: 1px solid #16324a;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 30px;
+.frequency-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.frequency-buttons label { flex: 1; min-width: 120px; }
+.frequency-buttons input[type="radio"] { display: none; }
+.frequency-buttons span {
+    display: block; padding: 10px; background: #111f30; border: 1px solid #16324a;
+    color: #f0f0f0; text-align: center; border-radius: 6px; cursor: pointer; font-weight: 600;
 }
+.frequency-buttons input[type="radio"]:checked + span { background: #2a8cff; color: white; border-color: #2a8cff; }
+.submit-area { text-align: center; margin-bottom: 40px; }
+.btn-publish-big {
+    padding: 15px 40px; font-size: 1.2rem; background: #2a8cff; border: none;
+    border-radius: 6px; color: white; cursor: pointer; font-weight: bold; transition: 0.3s;
+}
+.btn-publish-big:hover { background: #1a7cff; transform: scale(1.02); }
 
-.publish-table-original th, 
-.publish-table-original td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #16324a;
-    color: #f0f0f0;
-}
-
-.publish-table-original th {
-    background: #16324a;
-    color: #a9d6ff;
-    font-size: 1rem;
-    font-weight: bold;
-    width: 30%;
-}
-
-/* Champs Input spécifiques */
-.publish-table-original input {
-    width: 100%;
-    padding: 10px;
-    background: #050D17;
-    border: 1px solid #16324a;
-    border-radius: 6px;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.publish-table-original input:focus {
-    border-color: var(--accent);
-    outline: none;
-    background: #111f30;
-}
-
-.publish-table-original input[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-/* Boutons de fréquence (Style Radio caché) */
-.frequency-buttons-original {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 15px;
-}
-
-.frequency-buttons-original label {
-    flex: 1;
-    min-width: 120px;
-}
-
-/* Cache le vrai bouton radio mais garde l'accessibilité */
-.frequency-buttons-original input[type="radio"] {
-    display: none;
-}
-
-/* Style du faux bouton (le span) */
-.frequency-buttons-original span {
-    display: block;
-    padding: 12px;
-    background: #0b1620; /* Fond plus sombre */
-    border: 1px solid #16324a;
-    border-radius: 6px;
-    color: #f0f0f0;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-}
-
-.frequency-buttons-original span:hover {
-    background: #16324a;
-    border-color: var(--accent);
-}
-
-/* État sélectionné */
-.frequency-buttons-original input[type="radio"]:checked + span {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-    box-shadow: 0 0 10px rgba(42, 140, 255, 0.3);
-}
-
-/* Gros bouton de validation */
-.submit-area {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.btn-publish-large {
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn-publish-large:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-}
 
 /* =========================================
    5. RECHERCHE & RÉSULTATS
@@ -358,7 +214,7 @@
 
 
 /* =========================================
-   6. PAGES CONTENU (Location, À propos...)
+   6. LOCATION (Images ajustées)
    ========================================= */
 .vehicle-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -367,104 +223,39 @@
 .vehicle-card {
     background: var(--bg-card); border: 1px solid var(--border-color);
     border-radius: 8px; overflow: hidden; transition: transform 0.2s;
+    display: flex; flex-direction: column;
 }
 .vehicle-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-.vehicle-img { width: 100%; height: 180px; object-fit: cover; background: #000; }
-.vehicle-info { padding: 20px; }
-.vehicle-price { color: var(--accent); font-size: 1.2rem; font-weight: bold; margin-top: 10px; display: block; }
+
+/* AJUSTEMENT IMAGES VÉHICULES */
+.vehicle-img { 
+    width: 100%; 
+    height: 160px; /* Réduit pour rentrer dans le cadre */
+    object-fit: contain; /* L'image entière est visible sans être coupée */
+    background: #000; /* Fond noir pour combler les vides */
+    padding: 10px; /* Un peu d'espace */
+}
+
+.vehicle-info { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.vehicle-price { color: var(--accent); font-size: 1.2rem; font-weight: bold; margin-top: auto; padding-top: 10px; display: block; }
 
 .content-page { background: var(--bg-card); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); line-height: 1.6; }
 .content-page h2 { color: #fff; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 30px; }
+
+/* Message succès */
+.success-wrapper { display: flex; justify-content: center; align-items: center; min-height: 60vh; }
+.success-box {
+    background: #111f30; border: 2px solid #2a8cff; padding: 40px;
+    border-radius: 10px; text-align: center; max-width: 500px;
+}
+.success-box h2 { color: #2a8cff; margin-bottom: 20px; }
+.success-box p { color: #f0f0f0; margin-bottom: 30px; }
 
 /* Responsive Général */
 @media (max-width: 800px) {
     .main-content-grid { grid-template-columns: 1fr; }
     .content-box.large-image { grid-column: auto; grid-row: auto; }
     .messaging-layout { flex-direction: column; height: auto; }
-    .contacts-panel { width: 100%; max-height: 200px; }
-}
-
-/* --- PAGE CONFIRMATION (Inscription & Autres) --- */
-.success-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-}
-
-.success-box {
-    background: #111f30;
-    border: 2px solid #2a8cff;
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.success-box h2 {
-    color: #2a8cff;
-    margin-bottom: 20px;
-}
-
-.success-box p {
-    color: #f0f0f0;
-    margin-bottom: 30px;
-    line-height: 1.5;
-}
-
-/* --- TABLEAU DE BORD AMÉLIORÉ --- */
-.dashboard-hero {
-    background: #111f30;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #16324a;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.dashboard-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: #fff;
-}
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.dashboard-card {
-    background: #0b1620;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #16324a;
-    text-align: center;
-    transition: transform 0.2s, border-color 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 150px;
-    text-decoration: none;
-}
-
-.dashboard-card:hover {
-    transform: translateY(-5px);
-    border-color: #2a8cff;
-    background: #162436;
-}
-
-.dashboard-card span {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.dashboard-card h3 {
-    margin: 0;
-    color: #fff;
-    font-size: 1.2rem;
+    .contacts-list { width: 100%; max-height: 200px; }
+    .result-card { flex-direction: column; align-items: flex-start; gap: 15px; }
 }
