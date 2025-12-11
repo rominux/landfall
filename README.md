@@ -1,6 +1,6 @@
 # 🚗 LandRide - Plateforme de Mobilité Durable
 
-Ce projet a été réalisé dans le cadre de la SAÉ 1.05 / 1.06 (IUT Informatique - Université de Lille). Il s'agit d'un prototype fonctionnel (Maquette HTML/CSS) d'un service de mobilité interne pour l'entreprise **Landfall Games**.
+Ce projet a été réalisé dans le cadre de la SAÉ 1.05 / 1.06 (IUT Informatique - Université de Lille). Il s'agit d'un prototype fonctionnel (Maquette HTML/CSS) d'un service de mobilité interne pour l'entreprise **Landfall**.
 
 ## 👥 Équipe
 
@@ -33,13 +33,9 @@ Pour simuler la connexion à l'espace membre, vous pouvez utiliser n'importe que
 * **Utilisateur** : `admin`
 * **Mot de passe** : `admin`
 
-*(Note : Comme le site ne possède pas de back-end, cliquer sur "Connexion" vous redirigera automatiquement vers le tableau de bord, peu importe les identifiants saisis).*
-
 ## 🎨 Choix de Conception
 
-* **Technologies** : HTML5 et CSS3 pur. Aucun framework (Bootstrap, Tailwind) ni JavaScript n'a été utilisé, conformément aux consignes strictes.
 * **Design** : Utilisation d'un fond sombre (`#050D17`) pour le confort visuel et pour coller à l'image "Tech/Gaming" de Landfall.
-* **Eco-conception** : Les polices d'écriture sont des polices système (`system-ui`), aucune requête externe (Google Fonts, CDN) n'est effectuée pour minimiser l'impact énergétique et garantir le fonctionnement hors connexion.
 * **Simulation** : Des pages de confirmation (ex: `confirmation_trajet.html`) ont été créées pour simuler le retour visuel après la soumission des formulaires.
 
 ## 📂 Architecture du site
