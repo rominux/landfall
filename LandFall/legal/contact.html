@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Contact Admin - LandRide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Admin - LandRide</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/landfall_logo.webp">
@@ -11,7 +12,10 @@
     <header>
         <div class="left">
             <div class="brand"><img src="../img/landfall_logo.webp" alt="Logo" class="logo"></div>
-            <nav class="nav-stack"><li><a href="../index.html">Accueil</a></li></nav>
+            <nav class="nav-stack">
+                <li><a href="../index.html">LandRide</a></li>
+                <li><a href="https://landfall.se/">Landfall</a></li>
+            </nav>
         </div>
         <div class="actions"><a href="../index.html" class="btn small">Retour Accueil</a></div>
     </header>
@@ -33,10 +37,13 @@
                     <option>Signalement</option>
                     <option>Autre</option>
                 </select>
+                
                 <label for="email">Votre Email</label>
                 <input type="email" id="email" required placeholder="votre.email@landfall.se">
+                
                 <label for="message">Message</label>
                 <textarea id="message" rows="5" required placeholder="Décrivez votre problème..."></textarea>
+                
                 <button type="submit" class="btn primary">Envoyer le message</button>
             </form>
         </div>
