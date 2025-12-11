@@ -6,41 +6,78 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/landfall_logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <div class="left"><img src="img/landfall_logo.webp" class="logo"></div>
-        <div class="actions"><a href="tableau_de_bord.html" class="btn small">Mon Compte</a></div>
+        <div class="left">
+            <div class="brand">
+                <img src="img/landfall_logo.webp" alt="Logo LandRide" class="logo">
+            </div>
+            <nav>
+                <ul class="nav-stack">
+                    <li><a href="index.html">LandRide</a></li>
+                    <li><a href="https://landfall.se/">Landfall</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="actions">
+            <a href="compte/connexion.html" class="btn small">Connexion / Inscription</a>
+            <a href="compte/publier.html" class="btn primary">Publier un trajet</a>
+        </div>
     </header>
 
     <main>
-        <h1>Location de véhicules</h1>
-        <p>Déplacez-vous sur le campus sans polluer.</p>
+        <h1>Location de véhicules éco-responsables</h1>
+        <p>Déplacez-vous sur le campus LandFall sans polluer (et avec style).</p>
 
-        <div class="vehicle-grid">
-            <div class="vehicle-card">
-                <div class="vehicle-img" style="background:#222;"></div>
+        <section class="vehicle-grid">
+            <!-- Véhicule 1 : Vélo -->
+            <article class="vehicle-card">
+                <!-- Image avec solution de repli (fond gris) si l'image n'existe pas encore -->
+                <img src="img/velo.jpg" alt="Vélo électrique LandRide" class="vehicle-img" onerror="this.style.display='none';this.parentElement.style.backgroundColor='#333'">
                 <div class="vehicle-info">
-                    <h3>Vélo Électrique</h3>
-                    <p>Idéal pour l'inter-sites.</p>
-                    <span class="vehicle-price">1€ / heure</span>
-                    <a href="confirmation_location.html" class="btn primary" style="width:100%; margin-top:10px;">Louer</a>
+                    <h3>Vélo Électrique "Wobbler"</h3>
+                    <p>Idéal pour les trajets inter-sites. Casque fourni (obligatoire pour la physique ragdoll).</p>
+                    <span class="vehicle-price">Gratuit / 2h puis 1€/h</span>
+                    <form action="compte/confirmation_location.html">
+                        <button type="submit" class="btn primary" style="width:100%; margin-top:10px;">Réserver ce vélo</button>
+                    </form>
                 </div>
-            </div>
-            <div class="vehicle-card">
-                <div class="vehicle-img" style="background:#333;"></div>
+            </article>
+
+            <!-- Véhicule 2 : Trottinette -->
+            <article class="vehicle-card">
+                <img src="img/trottinette.jpg" alt="Trottinette électrique" class="vehicle-img" onerror="this.style.display='none';this.parentElement.style.backgroundColor='#333'">
                 <div class="vehicle-info">
-                    <h3>Trottinette</h3>
-                    <p>Rapide et maniable.</p>
-                    <span class="vehicle-price">0.50€ déblocage</span>
-                    <a href="confirmation_location.html" class="btn primary" style="width:100%; margin-top:10px;">Louer</a>
+                    <h3>Trottinette "Speedy"</h3>
+                    <p>Rapide et maniable. Attention aux trottoirs. Autonomie de 20km.</p>
+                    <span class="vehicle-price">0.50€ le déblocage</span>
+                    <form action="compte/confirmation_location.html">
+                        <button type="submit" class="btn primary" style="width:100%; margin-top:10px;">Louer maintenant</button>
+                    </form>
                 </div>
-            </div>
-        </div>
+            </article>
+
+            <!-- Véhicule 3 : Voiture (Utilise l'image existante dans votre dossier) -->
+            <article class="vehicle-card">
+                <img src="img/voiture-e-lectrique.jpg" alt="Voiture électrique de service" class="vehicle-img" onerror="this.style.display='none';this.parentElement.style.backgroundColor='#333'">
+                <div class="vehicle-info">
+                    <h3>Renault Zoé (Service)</h3>
+                    <p>Pour les déplacements professionnels nécessitant du matériel. Permis B requis.</p>
+                    <span class="vehicle-price">Sur réservation RH</span>
+                    <form action="compte/confirmation_location.html">
+                        <button type="submit" class="btn primary" style="width:100%; margin-top:10px;">Demander les clés</button>
+                    </form>
+                </div>
+            </article>
+        </section>
     </main>
+
     <footer>
         <ul class="footer-list">
-            <li>Romain Lefebvre</li> <li><a href="legal/contact.html">Contact Admin</a></li>
+            <li>Romain Lefebvre</li>
+            <li><a href="legal/contact.html">Contact Admin</a></li>
             <li><a href="legal/cgu.html">CGU</a></li>
             <li><a href="legal/mentions.html">Mentions Légales</a></li>
             <li><a href="legal/rgpd.html">Confidentialité (RGPD)</a></li>
