@@ -161,23 +161,35 @@
 /* =========================================
    4. PUBLIER (Style Tableau)
    ========================================= */
-.publish-title {
-    text-align: center; border: 2px solid #16324a; border-radius: 8px; padding: 20px;
-    margin: 0 auto 40px auto; max-width: 600px; background: #111f30; font-size: 1.8rem; color: #a9d6ff;
+.publish-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background: #111f30;
+    border: 1px solid #16324a;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
 }
-.publish-form { width: 100%; max-width: 800px; margin: 0 auto; }
-.publish-table-complex {
-    width: 100%; border-collapse: collapse; background: #111f30; border: 1px solid #16324a;
-    border-radius: 8px; overflow: hidden; margin-bottom: 30px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
-.publish-table-complex th {
-    background: #16324a; color: #a9d6ff; padding: 15px; text-align: left; font-weight: bold;
+.form-group label {
+    color: #a9d6ff;
+    font-weight: bold;
+    font-size: 0.95rem;
 }
-.publish-table-complex td { padding: 15px; border-bottom: 1px solid #16324a; color: #f0f0f0; vertical-align: middle; }
-.publish-table-complex input {
-    width: 100%; padding: 10px; background: #050d17; border: 1px solid #16324a; color: white; border-radius: 4px;
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
-.publish-table-complex input:disabled { background: #0b1620; color: #555; border-color: #111; cursor: not-allowed; }
+/* Responsive form */
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
 
 .frequency-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .frequency-buttons label { flex: 1; min-width: 120px; }

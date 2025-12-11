@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publier un trajet - LandRide</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/landfall_logo.webp">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
@@ -22,43 +22,43 @@
     <main>
         <h1 class="publish-title">Économisez en respectant la planète</h1>
         <form action="confirmation_trajet.html" class="publish-form">
-            <table class="publish-table-complex">
-                <thead>
-                    <tr>
-                        <th>Information</th>
-                        <th>Réponse</th>
-                        <th>Modification possible</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Heure de Départ</td>
-                        <td><input type="time" name="heure" required></td>
-                        <td><input type="time" disabled></td>
-                    </tr>
-                    <tr>
-                        <td>Lieu de départ</td>
-                        <td colspan="2"><input type="text" name="depart" placeholder="Adresse de départ" required></td>
-                    </tr>
-                    <tr>
-                        <td>Lieu d'arrivée</td>
-                        <td colspan="2"><input type="text" name="arrivee" placeholder="Adresse d'arrivée" required></td>
-                    </tr>
-                    <tr>
-                        <td>Nombre de passagers</td>
-                        <td colspan="2"><input type="number" name="places" min="1" max="8" placeholder="Ex: 3" required></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="freq-cell">
-                            <div class="frequency-buttons">
-                                <label><input type="radio" name="freq" value="une_fois" checked><span>Une seule fois</span></label>
-                                <label><input type="radio" name="freq" value="quotidien"><span>Tous les jours</span></label>
-                                <label><input type="radio" name="freq" value="hebdo"><span>Tous les 7 jours</span></label>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            
+            <div class="publish-grid">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="heure_depart">Heure de Départ</label>
+                        <input type="time" id="heure_depart" name="heure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="heure_arrivee_estimee">Arrivée estimée (Info)</label>
+                        <input type="time" id="heure_arrivee_estimee" disabled title="Calculé automatiquement">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lieu_depart">Lieu de départ</label>
+                    <input type="text" id="lieu_depart" name="depart" placeholder="Ex: 12 Rue de la Paix, Lille" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lieu_arrivee">Lieu d'arrivée</label>
+                    <input type="text" id="lieu_arrivee" name="arrivee" placeholder="Ex: Siège Landfall, Paris" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nb_places">Nombre de passagers</label>
+                    <input type="number" id="nb_places" name="places" min="1" max="8" placeholder="Ex: 3" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Fréquence du trajet</label>
+                    <div class="frequency-buttons">
+                        <label><input type="radio" name="freq" value="une_fois" checked><span>Une seule fois</span></label>
+                        <label><input type="radio" name="freq" value="quotidien"><span>Tous les jours</span></label>
+                        <label><input type="radio" name="freq" value="hebdo"><span>Tous les 7 jours</span></label>
+                    </div>
+                </div>
+            </div>
 
             <div class="submit-area">
                 <button type="submit" class="btn-publish-big">Partager mon trajet</button>
@@ -72,7 +72,7 @@
             <li><a href="../legal/contact.html">Contact Admin</a></li>
             <li><a href="../legal/cgu.html">CGU</a></li>
             <li><a href="../legal/mentions.html">Mentions Légales</a></li>
-            <li><a href="../legal/rgpd.html">RGPD</a></li>
+            <li><a href="../legal/rgpd.html">Confidentialité (RGPD)</a></li>
         </ul>
     </footer>
 </body>
