@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan du site - LandRide</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/landfall_logo.webp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style spécifique pour cette liste */
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .sitemap-section h2 {
+            color: #2a8cff;
+            border-bottom: 2px solid #16324a;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .sitemap-list li {
+            margin-bottom: 10px;
+        }
+        .sitemap-list a {
+            color: #f0f0f0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background: #0b1620;
+            border-radius: 6px;
+            border: 1px solid #16324a;
+            transition: all 0.2s;
+        }
+        .sitemap-list a:hover {
+            background: #16324a;
+            border-color: #2a8cff;
+            padding-left: 15px;
+        }
+        .tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: auto;
+            font-weight: bold;
+        }
+        .tag.public { background: #2ecc71; color: #000; }
+        .tag.compte { background: #e67e22; color: #fff; }
+        .tag.legal { background: #95a5a6; color: #000; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <div class="brand"><img src="img/landfall_logo.webp" alt="Logo" class="logo"></div>
+            <nav class="nav-stack"><li><a href="index.html">Accueil</a></li></nav>
+        </div>
+        <div class="actions">
+            <a href="compte/connexion.html" class="btn small">Connexion</a>
+        </div>
+    </header>
+
+    <main class="content-page">
+        <h1>Plan du site (Navigation Rapide)</h1>
+        <p>Utilisez cette page pour accéder rapidement à n'importe quel écran du prototype.</p>
+
+        <div class="sitemap-grid">
+            
+            <!-- SECTION PUBLIQUE -->
+            <div class="sitemap-section">
+                <h2>🌍 Pages Publiques</h2>
+                <ul class="sitemap-list">
+                    <li><a href="index.html">Accueil <span class="tag public">Racine</span></a></li>
+                    <li><a href="recherche.html">Résultats de recherche <span class="tag public">Racine</span></a></li>
+                    <li><a href="location.html">Location de véhicules <span class="tag public">Racine</span></a></li>
+                    <li><a href="a-propos.html">À propos <span class="tag public">Racine</span></a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION COMPTE / UTILISATEUR -->
+            <div class="sitemap-section">
+                <h2>👤 Espace Compte</h2>
+                <ul class="sitemap-list">
+                    <li><a href="compte/connexion.html">Connexion <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/inscription.html">Inscription <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/mdp_oublie.html">Mot de passe oublié <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/tableau_de_bord.html">Tableau de bord <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/messagerie.html">Messagerie <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/publier.html">Publier un trajet <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/detail_trajet.html">Détail d'un trajet <span class="tag compte">Compte</span></a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION CONFIRMATIONS (FEEDBACK) -->
+            <div class="sitemap-section">
+                <h2>✅ Pages de Confirmation</h2>
+                <ul class="sitemap-list">
+                    <li><a href="compte/inscription_ok.html">Succès Inscription <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/mail_envoye.html">Mail Envoyé <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/confirmation_trajet.html">Succès Publication <span class="tag compte">Compte</span></a></li>
+                    <li><a href="compte/confirmation_location.html">Succès Location <span class="tag compte">Compte</span></a></li>
+                    <li><a href="legal/confirmation_contact.html">Succès Contact <span class="tag legal">Légal</span></a></li>
+                </ul>
+            </div>
+
+            <!-- SECTION LÉGALE -->
+            <div class="sitemap-section">
+                <h2>⚖️ Juridique & Aide</h2>
+                <ul class="sitemap-list">
+                    <li><a href="legal/mentions.html">Mentions Légales <span class="tag legal">Légal</span></a></li>
+                    <li><a href="legal/cgu.html">CGU <span class="tag legal">Légal</span></a></li>
+                    <li><a href="legal/rgpd.html">RGPD <span class="tag legal">Légal</span></a></li>
+                    <li><a href="legal/contact.html">Contact Admin <span class="tag legal">Légal</span></a></li>
+                    <li><a href="legal/faq.html">FAQ <span class="tag legal">Légal</span></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer-list">
+            <li>Romain Lefebvre</li>
+            <li><a href="legal/contact.html">Contact Admin</a></li>
+            <li><a href="legal/cgu.html">CGU</a></li>
+            <li><a href="legal/mentions.html">Mentions Légales</a></li>
+            <li><a href="legal/rgpd.html">RGPD</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
