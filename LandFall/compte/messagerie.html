@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LandRide - Messagerie</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -21,14 +22,11 @@
     <main>
         <h1>Mes conversations</h1>
         
-        <!-- Système de messagerie sans JS -->
         <div class="messaging-layout">
-            <!-- Les inputs qui contrôlent l'affichage -->
             <input type="radio" name="contact" id="contact1" checked>
             <input type="radio" name="contact" id="contact2">
             <input type="radio" name="contact" id="contact3">
 
-            <!-- Colonne de gauche : Liste des contacts -->
             <div class="contacts-list">
                 <label for="contact1" class="contact-label">
                     <strong>Romain Neuille</strong>
@@ -44,22 +42,18 @@
                 </label>
             </div>
 
-            <!-- Colonne de droite : Conversations -->
             <div class="messages-display">
-                <!-- Conversation 1 -->
                 <div id="conv1" class="conversation">
                     <div class="message received">Salut, pour le trajet de demain, c'est toujours bon 8h ?</div>
                     <div class="message sent">Oui pas de souci ! Je t'attends devant le batiment B.</div>
                     <div class="message received">Super merci !</div>
                 </div>
 
-                <!-- Conversation 2 -->
                 <div id="conv2" class="conversation">
                     <div class="message received">J'arrive dans 5 minutes !</div>
                     <div class="message sent">Ok, prends ton temps.</div>
                 </div>
 
-                <!-- Conversation 3 -->
                 <div id="conv3" class="conversation">
                     <div class="message received">Bonjour, votre location de trottinette a bien été validée.</div>
                 </div>

@@ -112,6 +112,16 @@
 .form-links { margin-top: 15px; font-size: 0.9rem; }
 .form-links a { display: block; margin-top: 5px; }
 
+/* AJOUT : Groupe texte/lien (Connexion) */
+.text-link-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    color: #a9bfcf;
+}
+
 
 /* =========================================
    3. MESSAGERIE & TABLEAU DE BORD
@@ -159,8 +169,15 @@
 
 
 /* =========================================
-   4. PUBLIER (Style Tableau)
+   4. PUBLIER (NOUVEAU STYLE GRID)
    ========================================= */
+.publish-title {
+    text-align: center; border: 2px solid #16324a; border-radius: 8px; padding: 20px;
+    margin: 0 auto 40px auto; max-width: 600px; background: #111f30; font-size: 1.8rem; color: #a9d6ff;
+}
+.publish-form { width: 100%; max-width: 800px; margin: 0 auto; }
+
+/* AJOUT : Grid Layout pour le formulaire */
 .publish-grid {
     display: grid;
     grid-template-columns: 1fr;
