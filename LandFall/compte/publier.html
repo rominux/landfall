@@ -12,7 +12,10 @@
     <header>
         <div class="left">
             <div class="brand"><img src="../img/landfall_logo.webp" alt="Logo LandRide" class="logo"></div>
-            <nav class="nav-stack"><li><a href="../index.html">Accueil</a></li></nav>
+            <nav class="nav-stack">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="https://landfall.se/">Landfall</a></li>
+            </nav>
         </div>
         <div class="actions">
             <a href="tableau_de_bord.html" class="btn small">Mon Compte</a>
@@ -23,35 +26,43 @@
         <h1 class="publish-title">Économisez en respectant la planète</h1>
         <form action="confirmation_trajet.html" class="publish-form">
             
-            <div class="publish-grid">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="heure_depart">Heure de Départ</label>
-                        <input type="time" id="heure_depart" name="heure" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="heure_arrivee_estimee">Arrivée estimée (Info)</label>
-                        <input type="time" id="heure_arrivee_estimee" disabled title="Calculé automatiquement">
-                    </div>
+            <div class="publish-grid-table">
+                <div class="publish-header">Information</div>
+                <div class="publish-header">Réponse</div>
+                <div class="publish-header">Modification possible</div>
+
+                <div class="publish-cell">
+                    <label for="heure_depart">Heure de Départ</label>
+                </div>
+                <div class="publish-cell">
+                    <input type="time" id="heure_depart" name="heure" required>
+                </div>
+                <div class="publish-cell">
+                    <input type="time" disabled>
                 </div>
 
-                <div class="form-group">
-                    <label for="lieu_depart">Lieu de départ</label>
-                    <input type="text" id="lieu_depart" name="depart" placeholder="Ex: 12 Rue de la Paix, Lille" required>
+                <div class="publish-cell">
+                    <label for="depart">Lieu de départ</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="lieu_arrivee">Lieu d'arrivée</label>
-                    <input type="text" id="lieu_arrivee" name="arrivee" placeholder="Ex: Siège Landfall, Paris" required>
+                <div class="publish-cell col-span-2">
+                    <input type="text" id="depart" name="depart" placeholder="Adresse de départ" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="nb_places">Nombre de passagers</label>
-                    <input type="number" id="nb_places" name="places" min="1" max="8" placeholder="Ex: 3" required>
+                <div class="publish-cell">
+                    <label for="arrivee">Lieu d'arrivée</label>
+                </div>
+                <div class="publish-cell col-span-2">
+                    <input type="text" id="arrivee" name="arrivee" placeholder="Adresse d'arrivée" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Fréquence du trajet</label>
+                <div class="publish-cell">
+                    <label for="places">Nombre de passagers</label>
+                </div>
+                <div class="publish-cell col-span-2">
+                    <input type="number" id="places" name="places" min="1" max="8" placeholder="Ex: 3" required>
+                </div>
+
+                <div class="publish-cell col-span-3" style="justify-content:center;">
                     <div class="frequency-buttons">
                         <label><input type="radio" name="freq" value="une_fois" checked><span>Une seule fois</span></label>
                         <label><input type="radio" name="freq" value="quotidien"><span>Tous les jours</span></label>
