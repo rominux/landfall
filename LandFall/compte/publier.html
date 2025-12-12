@@ -29,7 +29,6 @@
             <div class="publish-grid-table">
                 <div class="publish-header">Information</div>
                 <div class="publish-header">Réponse</div>
-                <div class="publish-header">Modification possible</div>
 
                 <div class="publish-cell">
                     <label for="heure_depart">Heure de Départ</label>
@@ -37,32 +36,29 @@
                 <div class="publish-cell">
                     <input type="time" id="heure_depart" name="heure" required>
                 </div>
-                <div class="publish-cell">
-                    <input type="time" disabled>
-                </div>
 
                 <div class="publish-cell">
                     <label for="depart">Lieu de départ</label>
                 </div>
-                <div class="publish-cell col-span-2">
+                <div class="publish-cell">
                     <input type="text" id="depart" name="depart" placeholder="Adresse de départ" required>
                 </div>
 
                 <div class="publish-cell">
                     <label for="arrivee">Lieu d'arrivée</label>
                 </div>
-                <div class="publish-cell col-span-2">
+                <div class="publish-cell">
                     <input type="text" id="arrivee" name="arrivee" placeholder="Adresse d'arrivée" required>
                 </div>
 
                 <div class="publish-cell">
                     <label for="places">Nombre de passagers</label>
                 </div>
-                <div class="publish-cell col-span-2">
+                <div class="publish-cell">
                     <input type="number" id="places" name="places" min="1" max="8" placeholder="Ex: 3" required>
                 </div>
 
-                <div class="publish-cell col-span-3" style="justify-content:center;">
+                <div class="publish-cell col-span-2" style="justify-content:center;">
                     <div class="frequency-buttons">
                         <label><input type="radio" name="freq" value="une_fois" checked><span>Une seule fois</span></label>
                         <label><input type="radio" name="freq" value="quotidien"><span>Tous les jours</span></label>
