@@ -180,7 +180,7 @@
 /* NOUVEAU STYLE : TABLE-LIKE GRID */
 .publish-grid-table {
     display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr; /* 3 colonnes: Info, Réponse, Modif */
+    grid-template-columns: 1.5fr 2.5fr; /* 2 colonnes: Info, Réponse */
     gap: 0;
     background: #111f30;
     border: 1px solid #16324a;
@@ -215,9 +215,6 @@
     width: 100%; padding: 10px;
     background: #050d17; border: 1px solid #16324a;
     color: white; border-radius: 4px;
-}
-.publish-cell input:disabled {
-    background: #0b1620; color: #555; border-color: #111; cursor: not-allowed;
 }
 
 /* Fusion de colonnes (équivalent colspan) */
