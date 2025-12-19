@@ -23,7 +23,7 @@ L'entreprise choisie étant un studio de jeux vidéo (**Landfall Games**), nous 
 Ce site est une maquette statique (**HTML / CSS** uniquement).
 
 1.  Téléchargez le dossier du projet.
-2.  Ouvrez le fichier **`index.html`**.
+2.  Ouvrez le fichier **`index.html`**. *(Un fichier `carte.html` existe aussi pour acceder a l'ensemble des fichier depuis une seul page.)*
 3.  La navigation est entièrement simulée via des liens HTML.
 
 ### Identifiants de test (Fictifs)
